@@ -7,7 +7,7 @@ export const createBooking = async (req, res, next) => {
     try {
         console.log("hi");
         const { user,hotel, room, roomsbooked, checkIn, checkOut } = req.body;
-        console.log(user, hotel, room, roomsbooked, checkIn);
+        console.log(user, hotel, room, roomsbooked, checkIn, checkOut);
         const booking = new Booking({ user, hotel, room, roomsbooked, checkIn, checkOut });
         const savedBooking = await booking.save();
         res.status(200).json(savedBooking);
